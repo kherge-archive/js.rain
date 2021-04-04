@@ -1,6 +1,6 @@
 const isDev = require("electron-is-dev");
 const path = require("path");
-const { BrowserWindow, app } = require("electron");
+const { BrowserWindow, Menu, Tray, app, nativeImage } = require("electron");
 
 // Integrate Windows support.
 if (require("electron-squirrel-startup")) {
@@ -25,9 +25,18 @@ const createWindow = () => {
     },
   });
 
+  // Hide by default.
+  window.hide();
+
   // Adjusts window size to fit contents.
   window.webContents.on("preferred-size-changed", (_, preferredSize) => {
     window.setSize(preferredSize.width, preferredSize.height);
+  });
+
+  // Hide the window when closed.
+  window.on("close", (event) => {
+    event.preventDefault();
+    window.hide();
   });
 
   // Hide the window when minimized.
@@ -41,6 +50,27 @@ const createWindow = () => {
 
   // Disable resizing.
   window.setResizable(false);
+
+  // Set a context menu to show the window or quit.
+  const tray = new Tray(nativeImage.createFromPath(icon));
+
+  tray.setToolTip("Rain");
+  tray.setContextMenu(
+    Menu.buildFromTemplate([
+      {
+        label: "Show",
+        click: () => {
+          window.show();
+        },
+      },
+      {
+        label: "Quit",
+        click: () => {
+          app.quit();
+        },
+      },
+    ])
+  );
 
   // Load the React app.
   if (isDev) {
