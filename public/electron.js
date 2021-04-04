@@ -21,21 +21,17 @@ const createWindow = () => {
   // Create a new window.
   const window = new BrowserWindow({
     icon,
-    height: 220,
-    width: 480,
     webPreferences: {
       enablePreferredSizeMode: true,
       nodeIntegration: true,
     },
   });
 
+  // Set window size to fit content.
+  window.setContentSize(447, 214);
+
   // Hide by default.
   window.hide();
-
-  // Adjusts window size to fit contents.
-  window.webContents.on("preferred-size-changed", (_, preferredSize) => {
-    window.setSize(preferredSize.width, preferredSize.height);
-  });
 
   // Hide the window when minimized.
   window.on("minimize", (event) => {
