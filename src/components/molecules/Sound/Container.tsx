@@ -1,5 +1,5 @@
 import View, { Props as ViewProps } from "./View";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 type ContainerProps = {
   /**
