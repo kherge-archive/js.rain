@@ -45,3 +45,18 @@ Creates platform specific distributables in the `out/` folder.
 ## License
 
 The application and its source code is available under the ISC license.
+
+### Icon Files
+
+"[Rain Icon](https://iconarchive.com/show/weather-icons-by-jaan-jaak/rain-icon.html)" by Jaan-Jaak is licensed under CC Attribution-Share Alike 4.0.
+
+### Sound Files
+
+- Gathered from [Rainbowhunt](https://rainbowhunt.com/).
+  - "[Rain.wav](https://freesound.org/people/inchadney/sounds/88225/)" by inchadney is licensed under CC BY 3.0.
+  - "[rain_constant_thunderinmiddle01.ogg](https://freesound.org/people/aesqe/sounds/37614/)" by aesqe is licensed under CC BY 3.0.
+  - "[rbh thunder storm.wav](https://freesound.org/people/RHumphries/sounds/2523/)" by RHumphries is licensed under CC BY 3.0.
+  - "[rbh thunder_10.wav](https://freesound.org/people/RHumphries/sounds/2532/)" by RHumphries is licensed under CC BY 3.0.
+  - "[rbh thunder_13.wav](https://freesound.org/people/RHumphries/sounds/2535/)" by RHumphries is licensed under CC BY 3.0.
+  - "[rbh thunder_07.wav](https://freesound.org/people/RHumphries/sounds/2529/)" by RHumphries is licensed under CC BY 3.0.
+  - "[rbh thunder_05.wav](https://freesound.org/people/RHumphries/sounds/2527/)" by RHumphries is licensed under CC BY 3.0.
