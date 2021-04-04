@@ -1,4 +1,5 @@
 const { Menu, Tray, app, MenuItem } = require("electron");
+const { isAutoRun, setAutoRun } = require("./auto");
 const { getWindow } = require("./window");
 const { nativeIcon } = require("./icon");
 
@@ -53,6 +54,28 @@ const createTrayMenu = () => {
         }
 
         window.focus();
+      },
+    })
+  );
+
+  // (divider)
+  trayMenu.append(
+    new MenuItem({
+      type: "separator",
+    })
+  );
+
+  // Toggles autorun on or off.
+  trayMenu.append(
+    new MenuItem({
+      id: "auto",
+      label: "Run at Login",
+      type: "checkbox",
+      checked: isAutoRun(),
+      click: () => {
+        const self = trayMenu.getMenuItemById("auto");
+
+        setAutoRun(self.checked);
       },
     })
   );
