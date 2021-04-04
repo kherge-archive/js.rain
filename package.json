@@ -94,5 +94,5 @@
       "react-app/jest"
     ]
   },
-  "main": "public/electron.js"
+  "main": "public/electron"
 }
