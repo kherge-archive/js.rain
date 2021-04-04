@@ -1,15 +1,16 @@
-const isDev = require("electron-is-dev");
-const path = require("path");
 const { BrowserWindow, Menu, Tray, app, nativeImage } = require("electron");
-const { none, some } = require("@kherge/result");
-
-// The path to the icon.
-const icon = path.join(__dirname, "favicon.ico");
 
 // Integrate Windows support.
 if (require("electron-squirrel-startup")) {
   app.quit();
 }
+
+const isDev = require("electron-is-dev");
+const path = require("path");
+const { none, some } = require("@kherge/result");
+
+// The path to the icon.
+const icon = path.join(__dirname, "favicon.ico");
 
 // Create a global system tray.
 let tray;
