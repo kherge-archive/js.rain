@@ -1698,6 +1698,11 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
+"@kherge/result@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@kherge/result/-/result-0.2.0.tgz#92626b53b3525ae4cc13aa76856b1088d07bd3b0"
+  integrity sha512-bwFGjN3P2H+D7Ac3oWaFnIIVc1NeigLkxBJ4p5KQR8BILKX9fGW5o/jLaDV0LAx7d5/VDWIPORbz9kLZrCMgqg==
+
 "@malept/cross-spawn-promise@^1.0.0", "@malept/cross-spawn-promise@^1.1.0", "@malept/cross-spawn-promise@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@malept/cross-spawn-promise/-/cross-spawn-promise-1.1.1.tgz#504af200af6b98e198bce768bc1730c6936ae01d"
