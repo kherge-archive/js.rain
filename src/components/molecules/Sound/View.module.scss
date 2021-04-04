@@ -1,0 +1,26 @@
+.container {
+  display: inline-block;
+}
+
+.container + .container {
+  margin-left: 5px;
+}
+
+.input {
+  border: none;
+  width: 50px;
+  text-align: center;
+}
+
+.input:disabled {
+  background: none;
+  color: #a0a0a0;
+}
+
+.input:focus {
+  box-shadow: none;
+}
+
+.label {
+  font-weight: bold;
+}
