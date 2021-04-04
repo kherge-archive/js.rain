@@ -6,9 +6,15 @@ import Icon, {
   faVolumeOff,
   faVolumeUp,
 } from "components/atoms/Icon";
+import classNames from "classnames";
 import styles from "./Volume.module.scss";
 
 type Props = {
+  /**
+   * The button class name.
+   */
+  className?: string;
+
   /**
    * The muted state.
    */
@@ -30,7 +36,7 @@ type Props = {
   volume: number;
 };
 
-const Volume = ({ muted, onClick, tabIndex, volume }: Props) => {
+const Volume = ({ className, muted, onClick, tabIndex, volume }: Props) => {
   let icon: IconDefinition;
   let variant = "outline-dark";
 
@@ -47,7 +53,7 @@ const Volume = ({ muted, onClick, tabIndex, volume }: Props) => {
 
   return (
     <Button
-      className={styles.button}
+      className={classNames(styles.button, className)}
       onClick={onClick}
       tabIndex={tabIndex}
       variant={variant}
