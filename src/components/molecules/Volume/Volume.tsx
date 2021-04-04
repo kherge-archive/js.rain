@@ -20,12 +20,17 @@ type Props = {
   onClick: () => void;
 
   /**
+   * The tab index.
+   */
+  tabIndex?: number;
+
+  /**
    * The volume level.
    */
   volume: number;
 };
 
-const Volume = ({ muted, onClick, volume }: Props) => {
+const Volume = ({ muted, onClick, tabIndex, volume }: Props) => {
   let icon: IconDefinition;
   let variant = "outline-dark";
 
@@ -41,7 +46,12 @@ const Volume = ({ muted, onClick, volume }: Props) => {
   }
 
   return (
-    <Button className={styles.button} onClick={onClick} variant={variant}>
+    <Button
+      className={styles.button}
+      onClick={onClick}
+      tabIndex={tabIndex}
+      variant={variant}
+    >
       <Icon icon={icon} />
     </Button>
   );
