@@ -12,7 +12,10 @@ const build = ({
 describe("<Sound/>", () => {
   describe("container", () => {
     test("should synchronize audio mute and mute button", () => {
-      const { container } = build();
+      const onMutedChange = jest.fn();
+      const { container } = build({
+        onMutedChange,
+      });
 
       const audio = container.querySelector("audio") as HTMLAudioElement;
       const muted = audio.muted;
@@ -21,10 +24,14 @@ describe("<Sound/>", () => {
       fireEvent.click(button);
 
       expect(audio.muted).toBe(!muted);
+      expect(onMutedChange).toHaveBeenCalledWith(!muted);
     });
 
     test("should synchronize audio volume and volume control", () => {
-      const { container } = build();
+      const onVolumeChange = jest.fn();
+      const { container } = build({
+        onVolumeChange,
+      });
 
       const audio = container.querySelector("audio") as HTMLAudioElement;
       const range = container.querySelector(
@@ -38,6 +45,7 @@ describe("<Sound/>", () => {
       });
 
       expect(audio.volume).toEqual(0.33);
+      expect(onVolumeChange).toHaveBeenCalledWith(33);
     });
   });
 });
