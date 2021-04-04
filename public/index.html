@@ -2,10 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <% if (process.env.NODE_ENV === "production") { %>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'" />
+    <% } else { %>
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self' 'unsafe-inline'"
+      content="default-src 'self' 'unsafe-eval' 'unsafe-inline'"
     />
+    <% } %>
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
