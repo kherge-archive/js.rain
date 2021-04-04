@@ -20,8 +20,14 @@ const createWindow = () => {
     height: 220,
     width: 480,
     webPreferences: {
+      enablePreferredSizeMode: true,
       nodeIntegration: true,
     },
+  });
+
+  // Adjusts window size to fit contents.
+  window.webContents.on("preferred-size-changed", (_, preferredSize) => {
+    window.setSize(preferredSize.width, preferredSize.height);
   });
 
   // Hide the window when minimized.
