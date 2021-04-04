@@ -8,6 +8,7 @@ import Icon, {
 } from "components/atoms/Icon";
 import classNames from "classnames";
 import styles from "./Volume.module.scss";
+import { ColorScheme, getColorScheme } from "@kherge/prefers-color-scheme";
 
 type Props = {
   /**
@@ -49,6 +50,12 @@ const Volume = ({ className, muted, onClick, tabIndex, volume }: Props) => {
     icon = faVolumeDown;
   } else {
     icon = faVolumeOff;
+  }
+
+  if (getColorScheme() === ColorScheme.Dark) {
+    if (!muted) {
+      variant = "outline-light";
+    }
   }
 
   return (
