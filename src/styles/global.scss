@@ -12,12 +12,6 @@
   user-select: none;
   cursor: default;
 }
-input,
-button,
-textarea,
-:focus {
-  outline: none;
-}
 
 /* disable image and anchor dragging */
 a:not([draggable="true"]),
