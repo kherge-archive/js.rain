@@ -62,12 +62,32 @@
   ],
   "config": {
     "forge": {
-      "packagerConfig": {},
+      "packagerConfig": {
+        "appBundleId": "io.github.kherge.rain",
+        "appCopyright": "Copyright (c) 2021 Kevin Herrera",
+        "executableName": "Rain",
+        "icon": "public/favicon",
+        "ignore": [
+          "node_modules",
+          "scripts",
+          "src",
+          ".gitattributes",
+          ".gitignore",
+          "README.md",
+          "tsconfig.json",
+          "yarn.lock"
+        ],
+        "junk": true,
+        "overwrite": true,
+        "prune": false
+      },
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "rain"
+            "exe": "Rain",
+            "name": "Rain",
+            "title": "Rain"
           }
         },
         {
