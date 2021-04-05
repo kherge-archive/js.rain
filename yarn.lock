@@ -1705,6 +1705,11 @@
   optionalDependencies:
     jest "*"
 
+"@kherge/result@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@kherge/result/-/result-0.2.0.tgz#92626b53b3525ae4cc13aa76856b1088d07bd3b0"
+  integrity sha512-bwFGjN3P2H+D7Ac3oWaFnIIVc1NeigLkxBJ4p5KQR8BILKX9fGW5o/jLaDV0LAx7d5/VDWIPORbz9kLZrCMgqg==
+
 "@malept/cross-spawn-promise@^1.0.0", "@malept/cross-spawn-promise@^1.1.0", "@malept/cross-spawn-promise@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@malept/cross-spawn-promise/-/cross-spawn-promise-1.1.1.tgz#504af200af6b98e198bce768bc1730c6936ae01d"
@@ -5048,6 +5053,11 @@ electron-installer-redhat@^3.2.0:
     lodash "^4.17.15"
     word-wrap "^1.2.3"
     yargs "^16.0.2"
+
+electron-is-dev@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/electron-is-dev/-/electron-is-dev-2.0.0.tgz#833487a069b8dad21425c67a19847d9064ab19bd"
+  integrity sha512-3X99K852Yoqu9AcW50qz3ibYBWY79/pBhlMCab8ToEWS48R0T9tyxRiQhwylE7zQdXrMnx2JKqUJyMPmt5FBqA==
 
 electron-notarize@^1.0.0:
   version "1.0.0"
