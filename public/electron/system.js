@@ -49,7 +49,7 @@ const createTrayMenu = () => {
       click: () => {
         const window = getWindow().expect("A window should exist.");
 
-        if (window.isMinimized) {
+        if (window.isMinimized()) {
           window.show();
         }
 
