@@ -1,4 +1,5 @@
 const isDev = require("electron-is-dev");
+const path = require("path");
 const { BrowserWindow } = require("electron");
 const { iconPath } = require("./icon");
 const { none, some } = require("@kherge/result");
