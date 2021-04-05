@@ -1,7 +1,6 @@
-const isDev = require("electron-is-dev");
 const { BrowserWindow } = require("electron");
 const { iconPath } = require("./icon");
-const { none, some } = require("@kherge/result");
+const { isDev } = require("./utils");
 
 /**
  * Manages the process of creating a new application window.
@@ -61,10 +60,27 @@ const getWindow = () => {
   if (windows.length > 1) {
     throw new Error("Too many application windows found.");
   } else if (windows.length > 0) {
-    return some(windows[0]);
+    return {
+      isNone() {
+        return false;
+      },
+      isSome() {
+        return true;
+      },
+      map(cb) {
+        cb(windows[0]);
+      },
+    };
   }
 
-  return none();
+  return {
+    isNone() {
+      return true;
+    },
+    isSome() {
+      return false;
+    },
+  };
 };
 
 module.exports.createWindow = createWindow;
