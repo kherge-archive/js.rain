@@ -85,7 +85,6 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "exe": "Rain",
             "name": "Rain",
             "title": "Rain"
           }
