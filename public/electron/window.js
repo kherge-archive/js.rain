@@ -44,7 +44,7 @@ const createWindow = () => {
     window.loadURL("http://localhost:3000");
     window.webContents.openDevTools({ mode: "detach" });
   } else {
-    window.loadURL(`file://${path.join(__dirname, "../build/index.html")}`);
+    window.loadURL(`file://${path.join(__dirname, "../../build/index.html")}`);
   }
 };
 
