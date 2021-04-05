@@ -67,20 +67,10 @@
       "packagerConfig": {
         "appBundleId": "io.github.kherge.rain",
         "appCopyright": "Copyright (c) 2021 Kevin Herrera",
+        "asar": true,
         "executableName": "Rain",
         "icon": "public/favicon",
-        "ignore": [
-          "scripts",
-          "src",
-          ".gitattributes",
-          ".gitignore",
-          "README.md",
-          "tsconfig.json",
-          "yarn.lock"
-        ],
-        "junk": true,
-        "overwrite": true,
-        "prune": true
+        "overwrite": true
       },
       "makers": [
         {
