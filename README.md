@@ -2,6 +2,21 @@
 
 A background application for rain noise generation.
 
+## Installation
+
+1. Clone the repo.
+2. Install the depenencies (`yarn`).
+3. Build a distributable (`yarn build`).
+4. Install the distributable in (`out/make/`).
+
+> This app was supposed to be a quick and tiny little side project to use Electron, TypeScript,
+> and React together to play some soothing sounds. Instead, I found it to be an excercise in
+> frustration. The app is over 400 MB in side because `node_modules` could not be bundled
+> correctly (System.IO.PathTooLongException), and not for the lack of trying.
+>
+> PRs to fix problems with the app are greatly appreciated, but PRs in upstream dependencies may
+> be a better investment of time.
+
 ## Development
 
 ### Running Locally
