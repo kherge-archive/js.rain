@@ -14,8 +14,11 @@ export const createWindow = (): BrowserWindow => {
     center: true,
     icon: getIconAsPath(),
     fullscreenable: false,
+    maxHeight: WINDOW_SIZE.height,
+    maxWidth: WINDOW_SIZE.width + 200,
     maximizable: false,
-    resizable: false,
+    minHeight: WINDOW_SIZE.height,
+    minWidth: WINDOW_SIZE.width,
     useContentSize: true,
   });
 
