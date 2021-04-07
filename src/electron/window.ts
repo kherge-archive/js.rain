@@ -10,7 +10,11 @@ import { getIconAsPath } from "./icon";
  */
 export const createWindow = (): BrowserWindow => {
   const window = new BrowserWindow({
+    center: true,
     icon: getIconAsPath(),
+    fullscreenable: false,
+    maximizable: false,
+    resizable: false,
     useContentSize: true,
   });
 
@@ -22,9 +26,6 @@ export const createWindow = (): BrowserWindow => {
 
   // Set a fixed window size.
   window.setContentSize(550, 380);
-  window.setFullScreenable(false);
-  window.setMaximizable(false);
-  window.setResizable(false);
 
   // Hide the window when minimized.
   window.on("minimize", (event: Event) => {
