@@ -11,6 +11,7 @@ import { getIconAsPath } from "./icon";
 export const createWindow = (): BrowserWindow => {
   const window = new BrowserWindow({
     icon: getIconAsPath(),
+    useContentSize: true,
   });
 
   // Hide from the taskbar.
@@ -20,7 +21,7 @@ export const createWindow = (): BrowserWindow => {
   window.removeMenu();
 
   // Set a fixed window size.
-  window.setContentSize(550, 370);
+  window.setContentSize(550, 380);
   window.setFullScreenable(false);
   window.setMaximizable(false);
   window.setResizable(false);
