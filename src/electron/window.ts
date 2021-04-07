@@ -18,9 +18,6 @@ export const createWindow = (): BrowserWindow => {
     useContentSize: true,
   });
 
-  // Hide from the taskbar.
-  window.setSkipTaskbar(true);
-
   // Disable the window menu.
   window.removeMenu();
 
