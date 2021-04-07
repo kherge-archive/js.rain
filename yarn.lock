@@ -1682,6 +1682,13 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
+"@kherge/prefers-color-scheme@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@kherge/prefers-color-scheme/-/prefers-color-scheme-0.3.0.tgz#22ddf919cefa0b2c59abb3a4ee64844a5237999e"
+  integrity sha512-jM0idtmbiNVJ/V6Yn0cN7L5khDUViwK0pEB2QLMUiGqaapZEE8xYArhc180SQGLKF9f1PZjV0vZmo617JAPWRg==
+  optionalDependencies:
+    jest "*"
+
 "@kherge/result@^0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@kherge/result/-/result-0.2.0.tgz#92626b53b3525ae4cc13aa76856b1088d07bd3b0"
@@ -7639,7 +7646,7 @@ jest-circus@26.6.0:
     stack-utils "^2.0.2"
     throat "^5.0.0"
 
-jest-cli@^26.6.0:
+jest-cli@^26.6.0, jest-cli@^26.6.3:
   version "26.6.3"
   resolved "https://registry.yarnpkg.com/jest-cli/-/jest-cli-26.6.3.tgz#43117cfef24bc4cd691a174a8796a532e135e92a"
   integrity sha512-GF9noBSa9t08pSyl3CY4frMrqp+aQXFGFkf5hEPbh/pIUFYWMK6ZLTfbmadxJVcJrdRoChlWQsA2VkJcDFK8hg==
@@ -8028,6 +8035,15 @@ jest-worker@^26.5.0, jest-worker@^26.6.2:
     "@types/node" "*"
     merge-stream "^2.0.0"
     supports-color "^7.0.0"
+
+jest@*:
+  version "26.6.3"
+  resolved "https://registry.yarnpkg.com/jest/-/jest-26.6.3.tgz#40e8fdbe48f00dfa1f0ce8121ca74b88ac9148ef"
+  integrity sha512-lGS5PXGAzR4RF7V5+XObhqz2KZIDUA1yD0DG6pBVmy10eh0ZIXQImRuzocsI/N2XZ1GrLFwTS27In2i2jlpq1Q==
+  dependencies:
+    "@jest/core" "^26.6.3"
+    import-local "^3.0.2"
+    jest-cli "^26.6.3"
 
 jest@26.6.0:
   version "26.6.0"
