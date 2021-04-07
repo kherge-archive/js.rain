@@ -1,4 +1,4 @@
-import { APPLICATION_NAME, WINDOW_SIZE } from "./config";
+import { APPLICATION_NAME } from "./config";
 import { BrowserWindow, Menu, MenuItem, Tray, app } from "electron";
 import { getIconAsImage } from "./icon";
 import { toggleAutoStart, willAutoStart } from "./autorun";
@@ -22,7 +22,6 @@ export const createTrayIcon = (window: BrowserWindow): Tray => {
       window.restore();
     } else if (!window.isVisible()) {
       window.focus();
-      window.setContentSize(WINDOW_SIZE.width, WINDOW_SIZE.height);
     }
   });
 
