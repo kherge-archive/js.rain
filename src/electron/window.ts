@@ -3,6 +3,7 @@ import path from "path";
 import { BrowserWindow, Event, nativeTheme } from "electron";
 import { WINDOW_SIZE } from "./config";
 import { getIconAsPath } from "./icon";
+import { willAutoStart } from "./autorun";
 
 /**
  * Creates a new window pointing to the React app.
@@ -20,6 +21,7 @@ export const createWindow = (): BrowserWindow => {
     maximizable: false,
     minHeight: WINDOW_SIZE.height,
     minWidth: WINDOW_SIZE.width,
+    show: !willAutoStart(),
     useContentSize: true,
   });
 
