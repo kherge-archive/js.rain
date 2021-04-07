@@ -18,11 +18,7 @@ export const createTrayIcon = (window: BrowserWindow): Tray => {
 
   // Open the window and focus it when the icon is clicked.
   icon.on("click", () => {
-    if (window.isMinimized()) {
-      window.restore();
-    } else if (!window.isVisible()) {
-      window.focus();
-    }
+    window.show();
   });
 
   return icon;
