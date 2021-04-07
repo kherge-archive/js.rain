@@ -30,11 +30,11 @@ const App = () => {
           </Typography>
         </Grid>
       </Grid>
-      <Sound label="Rain" />
-      <Sound label="Splashing" />
-      <Sound label="Storm" />
-      <Sound label="Thunder" />
-      <Sound label="Window" />
+      <Sound label="Rain" url="static/mp3/rain.mp3" />
+      <Sound label="Splashing" url="static/mp3/splashing.mp3" />
+      <Sound label="Storm" url="static/mp3/storm.mp3" />
+      <Sound label="Thunder" url="static/mp3/thunder.mp3" />
+      <Sound label="Window" url="static/mp3/window.mp3" />
     </Container>
   );
 };
