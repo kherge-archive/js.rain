@@ -26,3 +26,10 @@ a[href^="ftp://"]
   -webkit-user-drag: auto;
   user-drag: auto;
 }
+
+/* dark mode background */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #252525;
+  }
+}

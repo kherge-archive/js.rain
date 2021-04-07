@@ -12,8 +12,12 @@ import {
 import "./App.css";
 import { useMemo } from "react";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   title: {
+    color:
+      theme.palette.type === "dark"
+        ? theme.palette.primary.dark
+        : theme.palette.primary.light,
     fontSize: "3rem",
     marginBottom: "0.4rem",
   },

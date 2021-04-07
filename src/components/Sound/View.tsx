@@ -113,12 +113,9 @@ const View = ({ id, label, mute, onChange, volume }: Props) => {
           </Typography>
         </Grid>
         <Grid item>
-          <IconButton
-            color={mute ? "secondary" : "primary"}
-            onClick={handleMute}
-          >
-            {!mute && <VolumeDown />}
-            {mute && <VolumeMute />}
+          <IconButton onClick={handleMute}>
+            {!mute && <VolumeDown color="action" />}
+            {mute && <VolumeMute color="secondary" />}
           </IconButton>
         </Grid>
         <Grid item xs>
@@ -133,7 +130,7 @@ const View = ({ id, label, mute, onChange, volume }: Props) => {
         </Grid>
         <Grid item>
           <Box className={styles.volumeUp}>
-            <VolumeUp />
+            <VolumeUp color="action" />
           </Box>
         </Grid>
       </Grid>
