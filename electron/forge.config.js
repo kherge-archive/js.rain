@@ -17,7 +17,8 @@ module.exports = {
     {
       name: "@electron-forge/maker-squirrel",
       config: {
-        name: "js.tau",
+        name: "Rain",
+        title: "Rain",
       },
     },
     {
