@@ -1,0 +1,41 @@
+# Become an allow list.
+*
+
+# Allow the GitHub specific files.
+!/.github/
+!/.github/**
+
+# Allow the ignore list.
+!/.gitignore
+
+# Allow the LICENSE.
+!/LICENSE
+
+# Allow the Electron configurations.
+!/electron/
+!/electron/**
+
+# Allow the public assets.
+!/public/
+!/public/**
+
+# Allow the scripts.
+!/scripts/
+!/scripts/**
+
+# Allow the source code.
+!/src/
+!/src/**
+
+# Allow the Electron Forge configuration.
+!/forge.js
+
+# Allow the package manifest.
+!/package.json
+!/yarn.lock
+
+# Allow the README.
+!/README.md
+
+# Allow the TypeScript configuration.
+!/tsconfig.json
