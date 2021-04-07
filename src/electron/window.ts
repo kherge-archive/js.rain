@@ -19,7 +19,8 @@ export const createWindow = (): BrowserWindow => {
   // Disable the window menu.
   window.removeMenu();
 
-  // Disable window size changes.
+  // Set a fixed window size.
+  window.setContentSize(550, 370);
   window.setFullScreenable(false);
   window.setMaximizable(false);
   window.setResizable(false);
