@@ -4,6 +4,8 @@ import Sound from "../Sound";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 
+import "./App.css";
+
 const useStyles = makeStyles((theme) => ({
   title: {
     fontSize: "3rem",
