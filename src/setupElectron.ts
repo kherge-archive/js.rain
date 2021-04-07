@@ -1,4 +1,4 @@
-import { app } from "electron";
+import { BrowserWindow, Tray, app } from "electron";
 import { createTrayIcon, createTrayMenu } from "./electron/tray";
 import { createWindow } from "./electron/window";
 
@@ -6,10 +6,15 @@ import { createWindow } from "./electron/window";
 // https://www.electronforge.io/config/makers/squirrel.windows
 if (require("electron-squirrel-startup")) app.quit();
 
+// Global instances to avoid garbage collection.
+// https://stackoverflow.com/a/58597207
+let icon: Tray;
+let window: BrowserWindow;
+
 // Wait until Electron is ready.
 app.whenReady().then(() => {
-  const window = createWindow();
-  const icon = createTrayIcon(window);
+  window = createWindow();
+  icon = createTrayIcon(window);
 
   createTrayMenu(icon);
 });
