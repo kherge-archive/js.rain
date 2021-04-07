@@ -6,6 +6,7 @@
   "author": "Kevin Herrera <kevin@herrera.io>",
   "description": "A desktop application for background noise.",
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
     "electron-squirrel-startup": "^1.0.0"
   },
   "devDependencies": {
