@@ -7,6 +7,7 @@
   "description": "A desktop application for background noise.",
   "dependencies": {
     "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
     "electron-squirrel-startup": "^1.0.0"
   },
   "devDependencies": {
