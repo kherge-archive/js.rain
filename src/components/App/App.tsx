@@ -2,7 +2,7 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Sound from "../Sound";
 import Typography from "@material-ui/core/Typography";
-import { ColorScheme, getColorScheme } from "@kherge/prefers-color-scheme";
+import { getColorScheme } from "@kherge/prefers-color-scheme";
 import {
   ThemeProvider,
   createMuiTheme,
