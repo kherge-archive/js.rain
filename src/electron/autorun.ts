@@ -1,3 +1,4 @@
+import { APPLICATION_NAME } from "./config";
 import { app } from "electron";
 
 /**
@@ -8,7 +9,7 @@ import { app } from "electron";
 export const toggleAutoStart = (start: boolean) => {
   app.setLoginItemSettings({
     enabled: start,
-    name: "Rain",
+    name: APPLICATION_NAME,
     openAsHidden: true,
     openAtLogin: start,
   });

@@ -1,6 +1,7 @@
 import is from "electron-is";
 import path from "path";
 import { BrowserWindow, Event } from "electron";
+import { WINDOW_SIZE } from "./config";
 import { getIconAsPath } from "./icon";
 
 /**
@@ -22,7 +23,7 @@ export const createWindow = (): BrowserWindow => {
   window.removeMenu();
 
   // Set a fixed window size.
-  window.setContentSize(550, 380);
+  window.setContentSize(WINDOW_SIZE.width, WINDOW_SIZE.height);
 
   // Hide the window when minimized.
   window.on("minimize", (event: Event) => {
