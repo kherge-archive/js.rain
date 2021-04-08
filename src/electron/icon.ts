@@ -20,9 +20,9 @@ export const getIconAsPath = (): string => {
 
   if (is.macOS()) {
     if (nativeTheme.shouldUseDarkColors) {
-      icon = "tray/light.png";
-    } else {
       icon = "tray/dark.png";
+    } else {
+      icon = "tray/light.png";
     }
   } else if (is.windows()) {
     icon = "icon.ico";
