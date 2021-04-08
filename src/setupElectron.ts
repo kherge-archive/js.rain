@@ -12,7 +12,9 @@ let icon: Tray;
 let window: BrowserWindow;
 
 // Hide the app from the macOS dock.
-app.dock.hide();
+if (app.dock) {
+  app.dock.hide();
+}
 
 // Wait until Electron is ready.
 app.whenReady().then(() => {
