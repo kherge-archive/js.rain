@@ -38,7 +38,7 @@ export const createWindow = (): BrowserWindow => {
   });
 
   window.on("close", (event: Event) => {
-    if (!forceClose) {
+    if (is.macOS() && !forceClose) {
       event.preventDefault();
 
       window.hide();
