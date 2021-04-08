@@ -11,10 +11,13 @@ if (require("electron-squirrel-startup")) app.quit();
 let icon: Tray;
 let window: BrowserWindow;
 
+// Hide the app from the macOS dock.
+app.dock.hide();
+
 // Wait until Electron is ready.
 app.whenReady().then(() => {
   window = createWindow();
   icon = createTrayIcon(window);
 
-  createTrayMenu(icon);
+  createTrayMenu(icon, window);
 });

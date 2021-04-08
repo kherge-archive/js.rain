@@ -1,6 +1,6 @@
 import is from "electron-is";
 import path from "path";
-import { BrowserWindow, Event, nativeTheme } from "electron";
+import { BrowserWindow, Event, app, nativeTheme } from "electron";
 import { WINDOW_SIZE } from "./config";
 import { getWindowIconAsPath } from "./icon";
 import { willAutoStart } from "./autorun";
@@ -11,6 +11,7 @@ import { willAutoStart } from "./autorun";
  * @return The window.
  */
 export const createWindow = (): BrowserWindow => {
+  let forceClose = false;
   const window = new BrowserWindow({
     backgroundColor: nativeTheme.shouldUseDarkColors ? "#252525" : "#FFFFFF",
     center: true,
@@ -30,6 +31,19 @@ export const createWindow = (): BrowserWindow => {
 
   // Set a fixed window size.
   window.setContentSize(WINDOW_SIZE.width, WINDOW_SIZE.height);
+
+  // Hide the window instead of closing in macOS.
+  app.on("before-quit", () => {
+    forceClose = true;
+  });
+
+  window.on("close", (event: Event) => {
+    if (!forceClose) {
+      event.preventDefault();
+
+      window.hide();
+    }
+  });
 
   // Hide the window when minimized.
   window.on("minimize", (event: Event) => {

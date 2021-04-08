@@ -1,3 +1,4 @@
+import is from "electron-is";
 import { APPLICATION_NAME } from "./config";
 import { BrowserWindow, Menu, MenuItem, Tray, app } from "electron";
 import { getTrayIconAsImage } from "./icon";
@@ -18,7 +19,9 @@ export const createTrayIcon = (window: BrowserWindow): Tray => {
 
   // Open the window and focus it when the icon is clicked.
   icon.on("click", () => {
-    window.show();
+    if (!is.macOS()) {
+      window.show();
+    }
   });
 
   return icon;
@@ -27,10 +30,30 @@ export const createTrayIcon = (window: BrowserWindow): Tray => {
 /**
  * Creates the menu for the system tray icon.
  *
- * @param icon The icon.
+ * @param icon   The icon.
+ * @param window The window.
  */
-export const createTrayMenu = (icon: Tray) => {
+export const createTrayMenu = (icon: Tray, window: BrowserWindow) => {
   const menu = new Menu();
+
+  // Add option to show the window.
+  if (is.macOS()) {
+    menu.append(
+      new MenuItem({
+        id: "settings",
+        label: "Settings",
+        click: () => {
+          window.show();
+        },
+      })
+    );
+
+    menu.append(
+      new MenuItem({
+        type: "separator",
+      })
+    );
+  }
 
   // Add an option to toggle auto start.
   menu.append(
