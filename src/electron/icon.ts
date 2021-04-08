@@ -1,6 +1,6 @@
 import is from "electron-is";
 import path from "path";
-import { NativeImage, nativeImage } from "electron";
+import { NativeImage, nativeImage, nativeTheme } from "electron";
 
 /**
  * Returns the icon as a native image.
@@ -19,7 +19,11 @@ export const getIconAsPath = (): string => {
   let icon: string = "icon512.png";
 
   if (is.macOS()) {
-    icon = "icon.icns";
+    if (nativeTheme.shouldUseDarkColors) {
+      icon = "tray/light.png";
+    } else {
+      icon = "tray/dark.png";
+    }
   } else if (is.windows()) {
     icon = "icon.ico";
   }

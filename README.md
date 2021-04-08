@@ -66,6 +66,8 @@ The application and its source code is available under the ISC license.
 
 "[Rain Icon](https://iconarchive.com/show/weather-icons-by-jaan-jaak/rain-icon.html)" by Jaan-Jaak is licensed under CC Attribution-Share Alike 4.0.
 
+"[Rain](https://thenounproject.com/vostrovsky/collection/weather-outline-bold/?i=467527)" by Viktor Ostrovsky is licensed under CC BY 3.0.
+
 ### Sound Files
 
 - Gathered from [Rainbowhunt](https://rainbowhunt.com/).
