@@ -1,6 +1,6 @@
 module.exports = {
   packagerConfig: {
-    icon: "public/favicon",
+    icon: "public/icons/icon",
     ignore: [
       "electron",
       "node_modules",

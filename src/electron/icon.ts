@@ -16,14 +16,14 @@ export const getIconAsImage = (): NativeImage =>
  * @return The icon path.
  */
 export const getIconAsPath = (): string => {
-  let icon: string = "logo512.png";
+  let icon: string = "icon512.png";
 
   if (is.macOS()) {
-    icon = "favicon.icns";
+    icon = "icon.icns";
   } else if (is.windows()) {
-    icon = "favicon.ico";
+    icon = "icon.ico";
   }
 
   // Remember, this is relative to build/.
-  return path.join(__dirname, icon);
+  return path.join(__dirname, "icons", icon);
 };
