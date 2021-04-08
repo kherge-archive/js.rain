@@ -55,9 +55,6 @@ export const createWindow = (): BrowserWindow => {
   if (is.dev()) {
     // Assume that react-script start is running.
     window.loadURL("http://localhost:3000");
-
-    // Show dev tools for convenience.
-    window.webContents.openDevTools({ mode: "detach" });
   } else {
     // Use the production build of the React app.
     // Remember that our paths are relative to build/.

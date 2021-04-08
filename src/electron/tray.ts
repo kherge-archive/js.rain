@@ -77,6 +77,17 @@ export const createTrayMenu = (icon: Tray, window: BrowserWindow) => {
     })
   );
 
+  // Add an option to open the debugger.
+  if (is.dev()) {
+    menu.append(
+      new MenuItem({
+        id: "debugger",
+        label: "Open Debugger",
+        click: () => window.webContents.openDevTools({ mode: "detach" }),
+      })
+    );
+  }
+
   // Add an option to quit the app.
   menu.append(
     new MenuItem({
