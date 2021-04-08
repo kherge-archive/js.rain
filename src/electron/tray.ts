@@ -1,6 +1,6 @@
 import { APPLICATION_NAME } from "./config";
 import { BrowserWindow, Menu, MenuItem, Tray, app } from "electron";
-import { getIconAsImage } from "./icon";
+import { getTrayIconAsImage } from "./icon";
 import { toggleAutoStart, willAutoStart } from "./autorun";
 
 /**
@@ -11,7 +11,7 @@ import { toggleAutoStart, willAutoStart } from "./autorun";
  * @return The icon.
  */
 export const createTrayIcon = (window: BrowserWindow): Tray => {
-  const icon = new Tray(getIconAsImage());
+  const icon = new Tray(getTrayIconAsImage());
 
   // Set a relevant name for the tooltip.
   icon.setToolTip(APPLICATION_NAME);

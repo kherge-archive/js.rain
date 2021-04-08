@@ -2,7 +2,7 @@ import is from "electron-is";
 import path from "path";
 import { BrowserWindow, Event, nativeTheme } from "electron";
 import { WINDOW_SIZE } from "./config";
-import { getIconAsPath } from "./icon";
+import { getWindowIconAsPath } from "./icon";
 import { willAutoStart } from "./autorun";
 
 /**
@@ -14,7 +14,7 @@ export const createWindow = (): BrowserWindow => {
   const window = new BrowserWindow({
     backgroundColor: nativeTheme.shouldUseDarkColors ? "#252525" : "#FFFFFF",
     center: true,
-    icon: getIconAsPath(),
+    icon: getWindowIconAsPath(),
     fullscreenable: false,
     maxHeight: WINDOW_SIZE.height,
     maxWidth: WINDOW_SIZE.width + 200,
