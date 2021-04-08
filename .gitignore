@@ -39,3 +39,6 @@
 
 # Allow the TypeScript configuration.
 !/tsconfig.json
+
+# Still ignore system files.
+/**/*/.*
