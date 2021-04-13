@@ -17,6 +17,11 @@ export type Item = {
 
 export type Props = {
   /**
+   * The global mute state.
+   */
+  globalMute: boolean;
+
+  /**
    * The label for the sound.
    */
   label: string;
@@ -35,7 +40,7 @@ const defaults: Item = {
   volume: 50,
 };
 
-const Container = ({ label, url }: Props) => {
+const Container = ({ globalMute, label, url }: Props) => {
   console.debug(`<Sound.Container label="${label}"/>`);
 
   const audio = useRef<HTMLAudioElement>(null);
@@ -45,14 +50,16 @@ const Container = ({ label, url }: Props) => {
   const [volume, setVolume] = useState(item.volume);
 
   const onChange: OnChange = (volume, mute) => {
-    setItem(id, {
-      muted: mute,
-      volume,
-    });
+    if (!globalMute) {
+      setItem(id, {
+        muted: mute,
+        volume,
+      });
 
-    setAudio(mute, volume);
-    setMute(mute);
-    setVolume(volume);
+      setAudio(mute, volume);
+      setMute(mute);
+      setVolume(volume);
+    }
   };
 
   const setAudio = (muted: boolean, volume: number) => {
@@ -63,7 +70,12 @@ const Container = ({ label, url }: Props) => {
   };
 
   // Set proper audio state on first load.
-  useEffect(() => setAudio(mute, volume), [audio, mute, volume]);
+  useEffect(() => setAudio(globalMute || mute, volume), [
+    audio,
+    globalMute,
+    mute,
+    volume,
+  ]);
 
   return (
     <>
@@ -72,7 +84,7 @@ const Container = ({ label, url }: Props) => {
         {...{
           id,
           label,
-          mute,
+          mute: globalMute || mute,
           onChange,
           volume,
         }}

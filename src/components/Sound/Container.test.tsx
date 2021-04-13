@@ -7,7 +7,9 @@ const build = (props: Partial<Props> = {}) =>
   render(
     <Container
       {...{
+        globalMute: false,
         label: "Test",
+        url: "",
         ...props,
       }}
     />
@@ -38,9 +40,9 @@ describe("<Sound/>", () => {
       mockStorage.getItem.mockImplementation(() => null);
 
       const id = hash("Test Label");
-      const { getBySelector } = build({ label: "Test Label" });
+      const { getBySelector, queryBySelector } = build({ label: "Test Label" });
 
-      getBySelector('button[class*="MuiIconButton-colorPrimary"]');
+      expect(queryBySelector("svg.MuiSvgIcon-colorSecondary")).toBeNull();
       getBySelector('input[value="50"]');
 
       expect(mockStorage.getItem).toHaveBeenCalledWith(id);
@@ -57,7 +59,7 @@ describe("<Sound/>", () => {
       const id = hash("Test Label");
       const { getBySelector } = build({ label: "Test Label" });
 
-      getBySelector('button[class*="MuiIconButton-colorSecondary"]');
+      getBySelector('svg[class*="MuiSvgIcon-colorSecondary"]');
       getBySelector('input[value="35"]');
 
       expect(mockStorage.getItem).toHaveBeenCalledWith(id);

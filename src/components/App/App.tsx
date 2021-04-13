@@ -1,7 +1,10 @@
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
+import IconButton from "@material-ui/core/IconButton";
 import Sound from "../Sound";
 import Typography from "@material-ui/core/Typography";
+import VolumeMute from "@material-ui/icons/VolumeMute";
+import VolumeUp from "@material-ui/icons/VolumeUp";
 import { getColorScheme } from "@kherge/prefers-color-scheme";
 import {
   ThemeProvider,
@@ -10,7 +13,7 @@ import {
 } from "@material-ui/core/styles";
 
 import "./App.css";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -23,8 +26,33 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const sounds = [
+  {
+    label: "Rain",
+    url: "static/mp3/rain.mp3",
+  },
+  {
+    label: "Splashing",
+    url: "static/mp3/splashing.mp3",
+  },
+  {
+    label: "Storm",
+    url: "static/mp3/storm.mp3",
+  },
+  {
+    label: "Thunder",
+    url: "static/mp3/thunder.mp3",
+  },
+  {
+    label: "Window",
+    url: "static/mp3/window.mp3",
+  },
+];
+
 const App = () => {
   console.debug(`<App/>`);
+
+  const [globalMute, setGlobalMute] = useState(false);
 
   const scheme = getColorScheme();
   const styles = useStyles();
@@ -50,14 +78,22 @@ const App = () => {
               variant="h1"
             >
               Rain
+              <IconButton onClick={() => setGlobalMute(!globalMute)}>
+                {!globalMute && <VolumeUp color="action" />}
+                {globalMute && <VolumeMute color="secondary" />}
+              </IconButton>
             </Typography>
           </Grid>
         </Grid>
-        <Sound label="Rain" url="static/mp3/rain.mp3" />
-        <Sound label="Splashing" url="static/mp3/splashing.mp3" />
-        <Sound label="Storm" url="static/mp3/storm.mp3" />
-        <Sound label="Thunder" url="static/mp3/thunder.mp3" />
-        <Sound label="Window" url="static/mp3/window.mp3" />
+        {sounds.map((sound) => (
+          <Sound
+            key={sound.label}
+            {...{
+              globalMute,
+              ...sound,
+            }}
+          />
+        ))}
       </Container>
     </ThemeProvider>
   );
