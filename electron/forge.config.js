@@ -1,5 +1,6 @@
 module.exports = {
   packagerConfig: {
+    executableName: "Rain",
     icon: "public/icons/icon",
     ignore: [
       "electron",
@@ -11,6 +12,7 @@ module.exports = {
       "README.md",
       "tsconfig.json",
     ],
+    name: "Rain",
     platform: "all",
   },
   makers: [
